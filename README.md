@@ -1,4 +1,4 @@
-# metabolismGUI
+# MetabolismGUI
 established as the comprehensive homework for Biochemsitry 2 course offered by Tsinghua University.
 ## Core Capabilities
 
