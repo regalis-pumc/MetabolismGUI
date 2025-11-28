@@ -94,12 +94,3 @@ e.g.
   "description": "Citrate exported to cytosol to provide Acetyl-CoA and NADPH"
 }
 ```
-
-metabolismGUI/
-metabolism-visualizer/
-│
-├─ index.html        
-├─ script.js         
-├─ style.css         
-└─ data/
-   └─ metabolism.json  
