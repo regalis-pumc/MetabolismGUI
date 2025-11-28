@@ -1,7 +1,486 @@
 {
-  "metabolites": [],
-  "reactions": [],
-  "pathways": [],
-  "regulations": [],
-  "crosslinks": []
+  "metabolites": [
+    {
+      "id": "glucose",
+      "name": "Glucose",
+      "formula": "C6H12O6",
+      "carbon_count": 6,
+      "category": "carbohydrate",
+      "in_pathways": ["glycolysis"],
+      "notes": ""
+    },
+    {
+      "id": "g6p",
+      "name": "Glucose-6-phosphate",
+      "formula": "C6H13O9P",
+      "carbon_count": 6,
+      "category": "carbohydrate",
+      "in_pathways": ["glycolysis", "ppp"],
+      "notes": ""
+    },
+    {
+      "id": "f6p",
+      "name": "Fructose-6-phosphate",
+      "formula": "C6H13O9P",
+      "carbon_count": 6,
+      "category": "carbohydrate",
+      "in_pathways": ["glycolysis"],
+      "notes": ""
+    },
+    {
+      "id": "f16bp",
+      "name": "Fructose-1,6-bisphosphate",
+      "formula": "C6H14O12P2",
+      "carbon_count": 6,
+      "category": "carbohydrate",
+      "in_pathways": ["glycolysis"],
+      "notes": ""
+    },
+    {
+      "id": "dhap",
+      "name": "Dihydroxyacetone phosphate",
+      "formula": "C3H7O6P",
+      "carbon_count": 3,
+      "category": "carbohydrate",
+      "in_pathways": ["glycolysis"],
+      "notes": ""
+    },
+    {
+      "id": "g3p",
+      "name": "Glyceraldehyde-3-phosphate",
+      "formula": "C3H7O6P",
+      "carbon_count": 3,
+      "category": "carbohydrate",
+      "in_pathways": ["glycolysis"],
+      "notes": ""
+    },
+    {
+      "id": "13bpg",
+      "name": "1,3-Bisphosphoglycerate",
+      "formula": "C3H8O10P2",
+      "carbon_count": 3,
+      "category": "carbohydrate",
+      "in_pathways": ["glycolysis"],
+      "notes": ""
+    },
+    {
+      "id": "3pg",
+      "name": "3-Phosphoglycerate",
+      "formula": "C3H7O7P",
+      "carbon_count": 3,
+      "category": "carbohydrate",
+      "in_pathways": ["glycolysis"],
+      "notes": ""
+    },
+    {
+      "id": "2pg",
+      "name": "2-Phosphoglycerate",
+      "formula": "C3H7O7P",
+      "carbon_count": 3,
+      "category": "carbohydrate",
+      "in_pathways": ["glycolysis"],
+      "notes": ""
+    },
+    {
+      "id": "pep",
+      "name": "Phosphoenolpyruvate",
+      "formula": "C3H5O6P",
+      "carbon_count": 3,
+      "category": "carbohydrate",
+      "in_pathways": ["glycolysis"],
+      "notes": ""
+    },
+    {
+      "id": "pyruvate",
+      "name": "Pyruvate",
+      "formula": "C3H4O3",
+      "carbon_count": 3,
+      "category": "carbohydrate",
+      "in_pathways": ["glycolysis", "tca_link"],
+      "notes": ""
+    },
+    {
+      "id": "acetylcoa",
+      "name": "Acetyl-CoA",
+      "formula": "C23H38N7O17P3S",
+      "carbon_count": 2,
+      "category": "coenzyme",
+      "in_pathways": ["tca"],
+      "notes": ""
+    },
+    {
+      "id": "citrate",
+      "name": "Citrate",
+      "formula": "C6H5O7",
+      "carbon_count": 6,
+      "category": "carboxylic_acid",
+      "in_pathways": ["tca"],
+      "notes": ""
+    },
+    {
+      "id": "isocitrate",
+      "name": "Isocitrate",
+      "formula": "C6H8O7",
+      "carbon_count": 6,
+      "category": "carboxylic_acid",
+      "in_pathways": ["tca"],
+      "notes": ""
+    },
+    {
+      "id": "akg",
+      "name": "α-Ketoglutarate",
+      "formula": "C5H6O5",
+      "carbon_count": 5,
+      "category": "carboxylic_acid",
+      "in_pathways": ["tca"],
+      "notes": ""
+    },
+    {
+      "id": "succinylcoa",
+      "name": "Succinyl-CoA",
+      "formula": "C25H40N7O19P3S",
+      "carbon_count": 4,
+      "category": "coenzyme",
+      "in_pathways": ["tca"],
+      "notes": ""
+    },
+    {
+      "id": "succinate",
+      "name": "Succinate",
+      "formula": "C4H6O4",
+      "carbon_count": 4,
+      "category": "carboxylic_acid",
+      "in_pathways": ["tca"],
+      "notes": ""
+    },
+    {
+      "id": "fumarate",
+      "name": "Fumarate",
+      "formula": "C4H4O4",
+      "carbon_count": 4,
+      "category": "carboxylic_acid",
+      "in_pathways": ["tca"],
+      "notes": ""
+    },
+    {
+      "id": "malate",
+      "name": "Malate",
+      "formula": "C4H6O5",
+      "carbon_count": 4,
+      "category": "carboxylic_acid",
+      "in_pathways": ["tca"],
+      "notes": ""
+    },
+    {
+      "id": "oaa",
+      "name": "Oxaloacetate",
+      "formula": "C4H4O5",
+      "carbon_count": 4,
+      "category": "carboxylic_acid",
+      "in_pathways": ["tca", "gluconeogenesis"],
+      "notes": ""
+    }
+  ],
+
+  "reactions": [
+    {
+      "id": "hexokinase",
+      "enzyme": "Hexokinase",
+      "substrates": ["glucose", "atp"],
+      "products": ["g6p", "adp"],
+      "cofactors": [],
+      "pathway": "glycolysis",
+      "reversible": false,
+      "carbon_map": {
+        "glucose": { "to": "g6p", "map": [1,2,3,4,5,6] }
+      },
+      "location": "cytosol",
+      "notes": ""
+    },
+    {
+      "id": "pgi",
+      "enzyme": "Phosphoglucose isomerase",
+      "substrates": ["g6p"],
+      "products": ["f6p"],
+      "cofactors": [],
+      "pathway": "glycolysis",
+      "reversible": true,
+      "carbon_map": {
+        "g6p": { "to": "f6p", "map": [1,2,3,4,5,6] }
+      },
+      "location": "cytosol",
+      "notes": ""
+    },
+    {
+      "id": "pfk1",
+      "enzyme": "Phosphofructokinase-1",
+      "substrates": ["f6p", "atp"],
+      "products": ["f16bp", "adp"],
+      "cofactors": [],
+      "pathway": "glycolysis",
+      "reversible": false,
+      "carbon_map": {
+        "f6p": { "to": "f16bp", "map": [1,2,3,4,5,6] }
+      },
+      "location": "cytosol",
+      "notes": ""
+    },
+    {
+      "id": "aldolase",
+      "enzyme": "Aldolase",
+      "substrates": ["f16bp"],
+      "products": ["dhap", "g3p"],
+      "cofactors": [],
+      "pathway": "glycolysis",
+      "reversible": true,
+      "carbon_map": {
+        "f16bp": {
+          "dhap": [1,2,3],
+          "g3p": [4,5,6]
+        }
+      },
+      "location": "cytosol",
+      "notes": ""
+    },
+    {
+      "id": "g3pdh",
+      "enzyme": "Glyceraldehyde-3-phosphate dehydrogenase",
+      "substrates": ["g3p", "nad", "pi"],
+      "products": ["13bpg", "nadh"],
+      "cofactors": [],
+      "pathway": "glycolysis",
+      "reversible": true,
+      "carbon_map": {
+        "g3p": { "to": "13bpg", "map": [1,2,3] }
+      },
+      "location": "cytosol",
+      "notes": ""
+    },
+    {
+      "id": "pgk",
+      "enzyme": "Phosphoglycerate kinase",
+      "substrates": ["13bpg", "adp"],
+      "products": ["3pg", "atp"],
+      "cofactors": [],
+      "pathway": "glycolysis",
+      "reversible": true,
+      "carbon_map": {
+        "13bpg": { "to": "3pg", "map": [1,2,3] }
+      },
+      "location": "cytosol",
+      "notes": ""
+    },
+    {
+      "id": "pdh",
+      "enzyme": "Pyruvate dehydrogenase complex",
+      "substrates": ["pyruvate", "coa", "nad"],
+      "products": ["acetylcoa", "nadh", "co2"],
+      "cofactors": ["thiamine_pp", "lipoic_acid"],
+      "pathway": "tca_link",
+      "reversible": false,
+      "carbon_map": {
+        "pyruvate": { "to": "acetylcoa", "map": [2,3] }
+      },
+      "location": "mitochondria",
+      "notes": "Key regulatory step controlling entry into TCA cycle"
+    },
+    {
+      "id": "citrate_synthase",
+      "enzyme": "Citrate synthase",
+      "substrates": ["acetylcoa", "oaa"],
+      "products": ["citrate", "coa"],
+      "cofactors": [],
+      "pathway": "tca",
+      "reversible": false,
+      "carbon_map": {
+        "acetylcoa": { "to": "citrate", "map": [1,2] },
+        "oaa": { "to": "citrate", "map": [3,4,5,6] }
+      },
+      "location": "mitochondria",
+      "notes": ""
+    },
+    {
+      "id": "aconitase",
+      "enzyme": "Aconitase",
+      "substrates": ["citrate"],
+      "products": ["isocitrate"],
+      "cofactors": [],
+      "pathway": "tca",
+      "reversible": true,
+      "carbon_map": {
+        "citrate": { "to": "isocitrate", "map": [1,2,3,4,5,6] }
+      },
+      "location": "mitochondria",
+      "notes": ""
+    },
+    {
+      "id": "idh",
+      "enzyme": "Isocitrate dehydrogenase",
+      "substrates": ["isocitrate", "nad"],
+      "products": ["akg", "nadh", "co2"],
+      "cofactors": [],
+      "pathway": "tca",
+      "reversible": false,
+      "carbon_map": {
+        "isocitrate": { "to": "akg", "map": [2,3,4,5,6] }
+      },
+      "location": "mitochondria",
+      "notes": "Key rate-limiting enzyme in TCA"
+    },
+    {
+      "id": "akgdh",
+      "enzyme": "α-Ketoglutarate dehydrogenase",
+      "substrates": ["akg", "nad", "coa"],
+      "products": ["succinylcoa", "nadh", "co2"],
+      "cofactors": [],
+      "pathway": "tca",
+      "reversible": false,
+      "carbon_map": {
+        "akg": { "to": "succinylcoa", "map": [2,3,4,5] }
+      },
+      "location": "mitochondria",
+      "notes": ""
+    },
+    {
+      "id": "succinate_synthase",
+      "enzyme": "Succinyl-CoA synthetase",
+      "substrates": ["succinylcoa", "gdp", "pi"],
+      "products": ["succinate", "gtp", "coa"],
+      "cofactors": [],
+      "pathway": "tca",
+      "reversible": true,
+      "carbon_map": {
+        "succinylcoa": { "to": "succinate", "map": [1,2,3,4] }
+      },
+      "location": "mitochondria",
+      "notes": ""
+    },
+    {
+      "id": "sdh",
+      "enzyme": "Succinate dehydrogenase",
+      "substrates": ["succinate", "fad"],
+      "products": ["fumarate", "fadh2"],
+      "cofactors": [],
+      "pathway": "tca",
+      "reversible": true,
+      "carbon_map": {
+        "succinate": { "to": "fumarate", "map": [1,2,3,4] }
+      },
+      "location": "mitochondria",
+      "notes": ""
+    },
+    {
+      "id": "fumarase",
+      "enzyme": "Fumarase",
+      "substrates": ["fumarate"],
+      "products": ["malate"],
+      "cofactors": [],
+      "pathway": "tca",
+      "reversible": true,
+      "carbon_map": {
+        "fumarate": { "to": "malate", "map": [1,2,3,4] }
+      },
+      "location": "mitochondria",
+      "notes": ""
+    },
+    {
+      "id": "mdh",
+      "enzyme": "Malate dehydrogenase",
+      "substrates": ["malate", "nad"],
+      "products": ["oaa", "nadh"],
+      "cofactors": [],
+      "pathway": "tca",
+      "reversible": false,
+      "carbon_map": {
+        "malate": { "to": "oaa", "map": [1,2,3,4] }
+      },
+      "location": "mitochondria",
+      "notes": ""
+    }
+  ],
+
+  "pathways": [
+    {
+      "id": "glycolysis",
+      "name": "Glycolysis",
+      "reactions": ["hexokinase", "pgi", "pfk1", "aldolase", "g3pdh", "pgk"],
+      "description": "Conversion of glucose to pyruvate",
+      "organism": "human",
+      "special": null
+    },
+    {
+      "id": "tca",
+      "name": "Tricarboxylic Acid Cycle",
+      "reactions": [
+        "citrate_synthase",
+        "aconitase",
+        "idh",
+        "akgdh",
+        "succinate_synthase",
+        "sdh",
+        "fumarase",
+        "mdh"
+      ],
+      "description": "Oxidation of acetyl-CoA to CO2 and NADH/FADH2",
+      "organism": "human",
+      "special": null
+    }
+  ],
+
+  "regulations": [
+    {
+      "id": "pfk1_regulation",
+      "target": "pfk1",
+      "activators": ["amp", "f26bp"],
+      "inhibitors": ["atp", "citrate"],
+      "hormonal": {
+        "insulin": "activate",
+        "glucagon": "inhibit"
+      },
+      "notes": ""
+    },
+    {
+      "id": "pdh_regulation",
+      "target": "pdh",
+      "activators": ["adp", "pyruvate"],
+      "inhibitors": ["atp", "nadh", "acetylcoa"],
+      "hormonal": {
+        "insulin": "activate"
+      },
+      "notes": ""
+    },
+    {
+      "id": "idh_regulation",
+      "target": "idh",
+      "activators": ["adp", "ca2plus"],
+      "inhibitors": ["nadh", "atp"],
+      "hormonal": {},
+      "notes": ""
+    },
+    {
+      "id": "akgdh_regulation",
+      "target": "akgdh",
+      "activators": ["ca2plus"],
+      "inhibitors": ["nadh", "succinylcoa"],
+      "hormonal": {},
+      "notes": ""
+    }
+  ],
+
+  "crosslinks": [
+    {
+      "id": "pyruvate_to_tca",
+      "from": "glycolysis",
+      "to": "tca",
+      "metabolite": "pyruvate",
+      "description": "Pyruvate enters mitochondria and is converted to acetyl-CoA"
+    },
+    {
+      "id": "oaa_to_gluconeogenesis",
+      "from": "tca",
+      "to": "gluconeogenesis",
+      "metabolite": "oaa",
+      "description": "OAA is a key junction between TCA and gluconeogenesis"
+    }
+  ]
 }
