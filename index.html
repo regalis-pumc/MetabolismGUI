@@ -1,11 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MetabolismGUI</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>MetabolismGUI</title>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
+
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+        }
+
+        #cy {
+            width: 100vw;
+            height: 100vh;
+            background: #ffffff;
+            border: 1px solid #ccc;
+        }
+
+        
+        #header {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+            background: rgba(255,255,255,0.8);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            border: 1px solid #ddd;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>Hello Metabolism Visualizer!</h1>
-  <script src="script.js"></script>
+
+    <div id="header">
+        MetabolismGUI
+    </div>
+
+    <!-- Cytoscape container -->
+    <div id="cy"></div>
+
+    
+    <script src="script.js"></script>
+
 </body>
 </html>
